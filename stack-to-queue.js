@@ -12,27 +12,20 @@ class Stack {
 
 class Queue {
     constructor() {
-        this.queue = []
+        this.inputStack = new Stack
+        this.outPutStack = new Stack
     }
     push(item) {
-        const firstData = new Stack
-        const secondData = new Stack
-        if(this.queue.length === 0 ) {
-            this.queue.push(item)
-            return
-        }
-        let lent = this.queue.length
-        Array(lent).fill(0).forEach(item => {
-            firstData.push(this.queue.pop())
-        })
-        firstData.push(item)
-        const len = firstData.stack.length
-        Array(len).fill(0).forEach(item => {
-            secondData.push(firstData.stack.pop())
-        })
-        this.queue = secondData.stack
+        this.inputStack.push(item)
     }
     pop() {
-        return this.queue.pop()
+        if(this.outPutStack.stack.length > 0) {
+            return this.outPutStack.pop() 
+        }
+        const length = this.inputStack.stack.length
+        Array(length).fill(0).forEach(() => {
+            this.outPutStack.push(this.inputStack.pop())
+        })
+        return this.outPutStack.pop()
     }
 }
