@@ -10,6 +10,3 @@ function twoSum(nums, target) {
     })
     return res
 }
-
-const arry = [1,2,3,4,9]
-console.log(twoSum(arry, 4))
