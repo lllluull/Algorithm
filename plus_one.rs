@@ -1,15 +1,11 @@
 fn number_to_array(nums:i32) -> Vec<i32> {
     let mut n = nums;
     let mut array: Vec<i32> = vec![];
-    let mut arrays: Vec<i32> = vec![];
     while n > 0 {
         array.push(n%10);
         n = n / 10;
     }
-    for i in array.iter().rev() {
-        arrays.push(*i);
-    }
-    arrays
+    array.reverse()
 }
 
 fn array_to_number(array:Vec<i32>) -> i32 {
