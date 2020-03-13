@@ -29,7 +29,6 @@ var threeSum = function(nums) {
             } else {
                 left ++
             }
-            
         }
     }
     return res
